@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +11,13 @@
 </head>
 
 <body>
-    <?php include('navbar.php') ?>
-    <?php include('services/dbconnect.php') ?>
+    <?php include('../navbar.php') ?>
+    <?php include('../services/dbconnect.php') ?>
 
     <?php
     $recipesStatement = $conn->prepare('SELECT * FROM `users` WHERE `id` =' . $_GET["id"]);
+    //$recipesStatement = $conn->prepare('SELECT * FROM `users` WHERE `id` = :id');
+    //$recipesStatement->bindValue('id', $_GET["id"], PDO::PARAM_INT);
     $recipesStatement->execute();
     $recipes = $recipesStatement->fetch();
     ?>
@@ -50,7 +53,7 @@
         var_dump($recipes)
         ?>
     </div>
-    <?php include('footer.php') ?>
+    <?php include('../footer.php') ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

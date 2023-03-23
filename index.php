@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +14,9 @@
     <?php include('navbar.php') ?>
     <div class="container my-5">
         <h1>Bienvenue sur le site le moins sécurisé</h1>
+        <div class="alert alert-warning" role="alert">
+            Tentez de compromettre la confidentialité, l'intégrité et la disponibilité de ce site !
+        </div>
         <article>
             <div class="card" style="width: 18rem;">
                 <img src="https://images.pexels.com/photos/3937887/pexels-photo-3937887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
@@ -30,11 +34,18 @@
                 <input type="submit" value="Poster" class="btn btn-primary">
             </div>
         </form>
-        <?php if (isset($_POST["message"])) { ?>
-            <div class="my-3 p-3 card">
-                <?php echo ($_POST["message"]); ?>
-            </div>
-        <?php } ?>
+        <ul class="list-group my-5">
+            <li class="list-group-item">30-01-23 : Super photo !</li>
+            <li class="list-group-item">13-02-23 : Continu comme ça &#128515; !</li>
+            <li class="list-group-item">23-03-23 : ...</li>
+            <?php if (isset($_POST["message"])) { ?>
+                <li class="list-group-item">
+                    <p> <?php echo (date('d-m-y') . " :"); ?></p>
+                    <?php echo ($_POST["message"]); ?>
+                    <!-- <?php echo (htmlspecialchars($_POST["message"])); ?> -->
+                </li>
+            <?php } ?>
+        </ul>
         </br>
         <table class="table">
             <thead class="table-dark">
@@ -71,6 +82,9 @@
                 </tr>
                 <tr>
                     <td> &lt;h1&gt; HTML Injection &lt;/h1&gt; </td>
+                </tr>
+                <tr>
+                    <td> &lt;img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80" alt="" srcset=""&gt; </td>
                 </tr>
             </tbody>
         </table>

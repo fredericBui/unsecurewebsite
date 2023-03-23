@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    <?php include('services/dbconnect.php') ?>
+    <?php include('../services/dbconnect.php') ?>
     <?php
     $recipesStatement = $conn->prepare('SELECT * FROM `users`');
     $recipesStatement->execute();

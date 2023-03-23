@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +11,8 @@
 </head>
 
 <body>
-    <?php include('navbar.php') ?>
-    <?php include('services/mailconnect.php') ?>
+    <?php include('../navbar.php') ?>
+    <?php include('../services/mailconnect.php') ?>
 </body>
 
 </html>
