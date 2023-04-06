@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 </head>
 
@@ -21,12 +21,12 @@
                 <label for="name" class="form-label">Email: </label>
                 <input type="text" name="email" id="email" class="form-control" required>
             </div>
-            <div class="form-example mb-3">
+            <div class="form-example">
                 <label for="password" class="form-label">Mot de passe: </label>
                 <input type="text" name="password" id="password" class="form-control" required>
                 <!-- <input type="password" name="password" id="password" class="form-control" required> -->
             </div>
-            <div class="form-example text-center">
+            <div class="form-example text-center my-5">
                 <input type="submit" value="Se connecter" class="my-3 btn btn-primary">
             </div>
         </form>
