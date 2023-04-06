@@ -1,10 +1,14 @@
 <?php
+require '../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createMutable('../');
+$dotenv->load();
+
 // Modifier les informations ci-dessous avec les vôtres
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'unsecuredb';
-$port = '3308';
+$servername = $_ENV["DB_SERVER_NAME"];
+$username = $_ENV["DB_USER_NAME"];
+$password = $_ENV["DB_PASSWORD"];
+$dbname = $_ENV["DB_NAME"];
+$port = $_ENV["DB_PORT"];
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname;port=$port", $username, $password);
